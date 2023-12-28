@@ -50,13 +50,11 @@ Stringent security measures are implemented throughout the system to protect use
 
 ## Team
 
-- Samual Gamil
-- Adel Mahmoud
-- Abdelwahed Roushdy
-- Mostafa Gamal
-- Rady Ahmed
-- Gamal Rasmi Nader
-- Mohamed Mamdouh
+- Samual Gamil Adel
+- Mahmoud Abdelwahed Roushdy
+- Mostafa Gamal Rady 
+- Ahmed Gamal Rasmi 
+- Nader Mohamed Mamdouh
 
 ## Contribution
 
