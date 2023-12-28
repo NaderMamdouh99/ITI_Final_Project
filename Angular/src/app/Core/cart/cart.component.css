@@ -1,0 +1,11 @@
+.BackGround{
+    background-color: rgba(15, 23, 43, .9);
+  }
+  .animated{
+    background-color: #FEA116;
+    color: white;
+  }
+  .animated:hover{
+    background-color:#dd8707;
+    color: white;
+  }

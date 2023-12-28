@@ -1,0 +1,57 @@
+<div class="container-xxl py-5 bg-dark hero-header mb-5">
+  <div class="container text-center my-5 pt-5 pb-4">
+      <h1 class="display-3 text-white mb-3  slideInDown">Cashier Dashbourd</h1>
+      <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-center text-uppercase">
+              <li class="breadcrumb-item "><a class="borderli" [routerLink]="['/meals']">Meals</a></li>
+              <li class="breadcrumb-item "><a class="borderli" [routerLink]="['/offer/admin']" >Offers</a></li>
+              <li class="breadcrumb-item "><a class="borderli" [routerLink]="['/extras']" >Extra</a></li>
+              <li class="breadcrumb-item "><a class="borderli" [routerLink]="['/ordersdata']" >Orders</a></li>
+
+              <li class="breadcrumb-item text-white active" aria-current="page">Cashier</li>
+              
+          </ol>
+      </nav>
+  </div>
+</div>
+
+<div class="container">
+
+      <h1 class="text-center display-3 ff-secondary Logos"> Offer Data
+        <div class="btn btn-outline-primary m-2" style="align-items: center;" [routerLink]="['/offer/new']">Add Offer</div>
+
+      </h1>
+      <table class="table m-4">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Start Date</th>
+              <th scope="col">End Date</th>
+              <th scope="col">Price</th>
+              <th scope="col">Details </th>
+              <th scope="col">Edit</th>
+              <th scope="col">Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of offers, let i = index ">
+              <th scope="row">{{i}}</th>
+              <td>{{item.name}}</td>
+              <td>{{item.startdate}}</td>
+              <td>{{item.enddate}}</td>
+              <td>{{item.price}}</td>
+              <td>
+                <i class="bi  fs-6 bi-info-square btn btn-outline-primary" [routerLink]="['/offer/details/',item.id]"> Details</i>
+              </td>
+              <td>
+                <i class="bi  fs-6 bi-pencil-square btn btn-outline-warning" [routerLink]="['/offer/edit/',item.id]"> Edit</i>
+              </td>
+              <td>
+                <i class="bi  fs-6 bi-trash btn btn-outline-danger" (click)="delete(item.id)"> Delete</i>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+    </div>

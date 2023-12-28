@@ -1,0 +1,52 @@
+<!-- Hero -->
+<div class="container-xxl py-5 bg-dark hero-header mb-5">
+  <div class="container text-center my-5 pt-5 pb-4">
+      <h1 class="display-3 text-white mb-3  slideInDown">Cashier Dashbourd</h1>
+      <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-center text-uppercase">
+              <li class="breadcrumb-item "><a class="borderli" [routerLink]="['/meals']">Meals</a></li>
+              <li class="breadcrumb-item "><a class="borderli" [routerLink]="['/offer/admin']" >Offers</a></li>
+              <li class="breadcrumb-item "><a class="borderli" [routerLink]="['/extras']" >Extra</a></li>
+              <li class="breadcrumb-item "><a class="borderli" [routerLink]="['/ordersdata']" >Orders</a></li>
+
+              <li class="breadcrumb-item text-white active" aria-current="page">Cashier</li>
+              
+          </ol>
+      </nav>
+  </div>
+</div>
+<div class="container">
+
+      <h1 class="text-center display-3 ff-secondary Logos"> Extra Data
+        <div class="btn btn-outline-primary m-2" style="align-items: center;" [routerLink]="['/extra/create']">Add Extra</div>
+
+      </h1>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+            <th scope="col">Details </th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let prod of extra let i = index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{prod.name}}</td>
+            <td>{{prod.price}}</td>
+            <td>
+              <i class="bi  fs-6 bi-info-square btn btn-outline-primary" [routerLink]="['/extra/details',prod.id]"> Details</i>
+            </td>
+            <td>
+              <i class="bi  fs-6 bi-pencil-square btn btn-outline-warning" [routerLink]="['/extra/edit',prod.id]"> Edit</i>
+            </td>
+            <td>
+              <i class="bi  fs-6 bi-trash btn btn-outline-danger" (click)="Delete(prod.id)"> Delete</i>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>

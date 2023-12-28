@@ -1,0 +1,49 @@
+<!-- <div class="container">
+
+    <div class="row">
+
+           <div class="card" class="col=8 m-4" >
+             <img [src]="offer?.photo" class="card-img-top" style="height: 300px; width: 350px;" alt="...">
+             <div class="card-body">
+               <h5 class="card-title">{{offer?.name}}</h5>
+               <p class="card-text">{{offer?.details}}</p>
+             </div>
+             <ul class="list-group list-group-flush">
+               <li class="list-group-item">Price:{{offer?.price}}</li>
+               <li class="list-group-item">start date{{offer?.startdate}}:</li>
+               <li class="list-group-item">End date:{{offer?.enddate}}</li>
+             </ul>
+             <div class="card-body">
+
+
+
+             </div>
+           </div>
+         </div>
+     </div> -->
+
+     <br>
+     <br>
+     <br>
+     <br>
+     <br>
+     <div class="container text-center">
+       <h5 class="display-3 section-title ff-secondary text-center Logos slideInLeft fw-normal">Offer Details</h5>
+     </div>
+
+     <div class="container">
+       <div class="card m-1">
+         <div class="card-header">
+          Offer Name : {{offer?.name}}
+         </div>
+         <ul class="list-group list-group-flush">
+           <li class="list-group-item">Offer Id : {{offer?.id}}</li>
+           <li class="list-group-item">Offer Details : {{offer?.details}}</li>
+           <li class="list-group-item">Offer Price : {{offer?.price}}</li>
+           <li class="list-group-item">Offer Start Date : {{offer?.startdate}}</li>
+           <li class="list-group-item">Offer End Date : {{offer?.enddate}}</li>
+         </ul>
+       </div>
+       <div class="btn btn-warning m-2 animated" [routerLink]="['/offer/admin']">Back To Products</div>
+
+     </div>

@@ -1,0 +1,61 @@
+<br />
+<br />
+<br />
+<br />
+<br />
+<div class="container">
+  <div class="container text-center">
+    <h1 class="text-center display-3 ff-secondary Logos section-title">
+      {{ extraId ? "Edit Extra" : "Add New Extra" }}
+    </h1>
+  </div>
+
+  <form class="row g-3 m-5" [formGroup]="extraFormGroup" (submit)="GetData($event)">
+    <!-- Product Name  -->
+    <div class="col-11">
+      <label for="name" class="form-label">Extra Name</label>
+      <input type="text" class="form-control" id="name" name="name" formControlName="name" [ngClass]="{
+          'is-valid': nameControl.valid && nameControl.touched,
+          'is-invalid': nameControl.invalid && nameControl.touched
+        }" required />
+      <div class="valid-feedback">Looks good!</div>
+      <div class="invalid-feedback" *ngIf="nameControl.errors && nameControl.hasError('required')">
+        Name Must be Required
+      </div>
+    </div>
+
+    <!-- Product Price  -->
+    <div class="col-11">
+      <label for="price" class="form-label">Price</label>
+      <input type="number" class="form-control" id="price" name="price" [ngClass]="{
+          'is-valid': priceControl.valid && priceControl.touched,
+          'is-invalid': priceControl.invalid && priceControl.touched
+        }" formControlName="price" required />
+      <div class="valid-feedback">Looks good!</div>
+      <div class="invalid-feedback" *ngIf="priceControl.errors">
+        Price Must be Required
+      </div>
+    </div>
+
+    <!-- Product image  -->
+    <div class="col-11">
+      <label for="photo" class="form-label">Product image</label>
+      <input type="file" class="form-control" id="photo" name="photo" 
+            [ngClass]="{ 'is-valid':imgshow!='' ,
+            'is-invalid': imgshow=='' }"
+            required (change)="handleImageUpload($event)" />
+      <div class="valid-feedback">Looks good!</div>
+      <div class="invalid-feedback" *ngIf="photoeControl.errors && photoeControl.hasError('required')">
+        Must be add image to this Product
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <img id="image" [src]="imgshow" class="img-fluid rounded border " alt="">
+    </div>
+    <div class="col-11">
+      <button class="btn btn-warning animated" type="submit">
+        Submit form
+      </button>
+    </div>
+  </form>
+</div>

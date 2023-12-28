@@ -1,0 +1,65 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\Final_Project\\Final_3\\APIback\\FinalProject_DotNet_API3\\FinalProject_DotNet_API\\wwwroot\\images\\meals\\Assignment2.png",
+      "PackagePath": "staticwebassets\\images\\meals\\Assignment2.png"
+    },
+    {
+      "Id": "D:\\Final_Project\\Final_3\\APIback\\FinalProject_DotNet_API3\\FinalProject_DotNet_API\\wwwroot\\images\\meals\\Screenshot_2.png",
+      "PackagePath": "staticwebassets\\images\\meals\\Screenshot_2.png"
+    },
+    {
+      "Id": "D:\\Final_Project\\Final_3\\APIback\\FinalProject_DotNet_API3\\FinalProject_DotNet_API\\wwwroot\\images\\meals\\admin dashbord movie.png",
+      "PackagePath": "staticwebassets\\images\\meals\\admin dashbord movie.png"
+    },
+    {
+      "Id": "D:\\Final_Project\\Final_3\\APIback\\FinalProject_DotNet_API3\\FinalProject_DotNet_API\\wwwroot\\images\\meals\\ahmedtv.png",
+      "PackagePath": "staticwebassets\\images\\meals\\ahmedtv.png"
+    },
+    {
+      "Id": "D:\\Final_Project\\Final_3\\APIback\\FinalProject_DotNet_API3\\FinalProject_DotNet_API\\wwwroot\\images\\meals\\assignment api2.png",
+      "PackagePath": "staticwebassets\\images\\meals\\assignment api2.png"
+    },
+    {
+      "Id": "D:\\Final_Project\\Final_3\\APIback\\FinalProject_DotNet_API3\\FinalProject_DotNet_API\\wwwroot\\images\\meals\\hackerrank4.png",
+      "PackagePath": "staticwebassets\\images\\meals\\hackerrank4.png"
+    },
+    {
+      "Id": "D:\\Final_Project\\Final_3\\APIback\\FinalProject_DotNet_API3\\FinalProject_DotNet_API\\wwwroot\\images\\meals\\mostafa_4.png",
+      "PackagePath": "staticwebassets\\images\\meals\\mostafa_4.png"
+    },
+    {
+      "Id": "D:\\Final_Project\\Final_3\\APIback\\FinalProject_DotNet_API3\\FinalProject_DotNet_API\\wwwroot\\images\\meals\\noon.png",
+      "PackagePath": "staticwebassets\\images\\meals\\noon.png"
+    },
+    {
+      "Id": "D:\\Final_Project\\Final_3\\APIback\\FinalProject_DotNet_API3\\FinalProject_DotNet_API\\wwwroot\\images\\meals\\powershell.png",
+      "PackagePath": "staticwebassets\\images\\meals\\powershell.png"
+    },
+    {
+      "Id": "D:\\Final_Project\\Final_3\\APIback\\FinalProject_DotNet_API3\\FinalProject_DotNet_API\\wwwroot\\images\\meals\\علي1.png",
+      "PackagePath": "staticwebassets\\images\\meals\\علي1.png"
+    },
+    {
+      "Id": "D:\\Final_Project\\Final_3\\APIback\\FinalProject_DotNet_API3\\FinalProject_DotNet_API\\wwwroot\\images\\meals\\مشروع على .png",
+      "PackagePath": "staticwebassets\\images\\meals\\مشروع على .png"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.FinalProject.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.FinalProject.props",
+      "PackagePath": "build\\FinalProject.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.FinalProject.props",
+      "PackagePath": "buildMultiTargeting\\FinalProject.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.FinalProject.props",
+      "PackagePath": "buildTransitive\\FinalProject.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

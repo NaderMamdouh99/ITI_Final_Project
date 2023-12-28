@@ -1,0 +1,49 @@
+
+
+
+
+<div class="container text-center">
+  <h5 class="display-3 section-title ff-secondary text-center Logos slideInLeft fw-normal">Meals</h5>
+</div>
+
+ <div class="container" >
+  <main id=app>
+    <section class="cards">
+      <div class="row">
+        <div class="col-sm-6 col-md-4 col-lg-3 mb-4 mb-md-0 " *ngFor="let item of meals, let i = index ">
+          <div class="card pika animated" >
+            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light" style="height: 150px;">
+              <img [src]="[item.photo]" class="img-fluid" style="height: 150px; width: 100%;"/>
+              <a >
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+              </a>
+
+            </div>
+            <div class="card-body">
+              <h5 class="card-title font-weight-bold"><a>{{item.name}}</a></h5>
+
+              <ul class="list-unstyled list-inline mb-0">
+                <li class="d-flex justify-content-between mb-0">
+                  <h6 class="text-primary" *ngIf="item.discount==0 || item.discount==undefined">Cost :{{item.price}} LE
+                    <span class="m-2" *ngIf="item.discount!=0&&item.discount!=undefined">New Cost :{{item.discount}} LE</span></h6>
+                </li>
+                <li class="d-flex justify-content-between mb-0">
+                  <h6 class="text-primary" *ngIf="item.discount!=0&&item.discount!=undefined"><s>{{item.price}} LE</s>
+                    <span class="m-2" *ngIf="item.discount!=0&&item.discount!=undefined">New Cost :{{item.discount}} LE</span></h6>
+                </li>
+              </ul>
+              <ul class="list-unstyled list-inline mb-0">
+                <li class="d-flex justify-content-between mb-3">
+                  <h6 style="font-size: small;height: 40px;">{{item.details}}</h6>
+                </li>
+                <li class="d-flex justify-content-between  mb-2" >
+                  <i class="bi bi-cart text-primary fa-2x  "(click)="add(item.id)">+</i>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>

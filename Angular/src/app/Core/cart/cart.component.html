@@ -1,0 +1,211 @@
+<section class=" h-custom "  >
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col">
+        <div class="card">
+          <div class="card-body p-4">
+
+            <div class="row">
+
+              <div class="col-lg-7">
+                <h5 class="mb-3"><a [routerLink]="['/']" class="text-body"><i
+                      class="fas fa-long-arrow-alt-left me-2"></i>Continue shopping</a></h5>
+                <hr>
+
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                  <div>
+                    <p class="mb-1">Shopping cart</p>
+                    <p class="mb-0">You have {{mealsandq.length}} items in your cart</p>
+                  </div>
+
+                </div>
+
+                 <!--  put carts below -->
+                 <div  *ngFor="let prod of mealsandq;let counter= index">
+                    <!-- <app-cart-detail  [meal] = "prod" ></app-cart-detail> -->
+
+                            <!-- start:: cart -->
+
+                             <!-- Single item -->
+                                    <div class="row">
+                                      <div class="col-lg-3 col-md-12 mb-4 mb-lg-0">
+                                        <!-- Image -->
+                                        <div class="bg-image hover-overlay hover-zoom ripple rounded" data-mdb-ripple-color="light">
+                                          <img src={{prod.meal.photo}}
+                                            class="w-100" />
+                                          <a href="#!">
+                                            <div class="mask" style="background-color: rgba(140, 109, 109, 0.2)"></div>
+                                          </a>
+                                        </div>
+                                        <!-- Image -->
+                                      </div>
+
+                                      <div class="col-lg-5 col-md-6 mb-4 mb-lg-0">
+                                        <!-- Data -->
+                                        <p><strong>{{prod.meal.name}}</strong></p>
+                                        <p>{{prod.meal.details}}</p>
+
+
+                                        <button type="button" (click)="deleteMeal(prod.meal.id,prod.meal.type)" class="btn btn-danger btn-sm me-1 mb-2" data-mdb-toggle="tooltip"
+                                          title="Remove item">
+                                          <i class="bi bi-trash-fill"></i>
+                                        </button>
+
+                                        <!-- Data -->
+                                      </div>
+
+                                      <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                                        <!-- Quantity -->
+                                        <div class="d-flex mb-4" style="max-width: 300px">
+
+                                          <ng-container *ngIf="prod.quantity > 1 ; else elseTemplate">
+                                            <button class="btn btn-primary px-3 me-2" style="height: 38px;"
+                                            (click)=" MinusToArray(prod.meal.id,prod.meal.type)">
+                                            <i class="bi bi-dash"></i>
+                                          </button>
+
+
+                                          </ng-container>
+
+                                          <ng-template #elseTemplate>
+                                            <button class="btn btn-primary px-3 me-2" style="height: 38px;" disabled
+                                            (click)=" MinusToArray(prod.meal.id,prod.meal.type)">
+                                            <i class="bi bi-dash" ></i>
+                                          </button>
+
+                                          </ng-template>
+
+
+                                          <div class="form-outline">
+                                            <input id="form1" min="0" name="quantity" #quantityInput type="number" value ={{prod.quantity}} disabled    class="form-control" />
+                                            <label class="form-label" for="form1">Quantity</label>
+                                          </div>
+                                            <!-- if  else for disable button -->
+                                              <ng-container *ngIf="prod.quantity < 200 ; else elseTemplate">
+                                                <button class="btn btn-primary px-3 ms-2" style="height: 38px;"
+                                                (click)="BlusToArray(prod.meal.id,prod.meal.type)">
+                                                <i class="bi bi-plus-lg"></i>
+                                              </button>
+
+                                              </ng-container>
+
+                                              <ng-template #elseTemplate>
+                                                 <button class="btn btn-primary px-3 ms-2" disabled
+                                                (click)="BlusToArray(prod.meal.id,prod.meal.type)">
+                                                <i class="bi bi-plus-lg"></i>
+                                              </button>
+                                              </ng-template>
+
+
+
+                                        </div>
+                                        <!-- Quantity -->
+
+                                        <!-- Price -->
+                                        <p class="text-start text-md-center">
+                                          <strong> &pound; {{ prod.meal.price * prod.quantity}}</strong>
+                                        </p>
+                                        <!-- Price -->
+                                      </div>
+                                    </div>
+                                    <!-- Single item -->
+                                    <hr class="my-4" />
+                            <!-- end:: cart -->
+                 </div>
+
+
+              </div>
+
+
+              <div class="col-lg-5">
+
+                <div class="card BackGround text-white rounded-3">
+                  <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                      <h5 class="mb-0 ">Card details</h5>
+                      <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/avatar-6.webp"
+                        class="img-fluid rounded-3" style="width: 45px;" alt="Avatar">
+                    </div>
+
+                    <p class="small mb-2">Card type</p>
+                    <a href="#!" type="submit" class="text-white"><i
+                        class="fab fa-cc-mastercard fa-2x me-2"></i></a>
+                    <a href="#!" type="submit" class="text-white"><i
+                        class="fab fa-cc-visa fa-2x me-2"></i></a>
+                    <a href="#!" type="submit" class="text-white"><i
+                        class="fab fa-cc-amex fa-2x me-2"></i></a>
+                    <a href="#!" type="submit" class="text-white"><i class="fab fa-cc-paypal fa-2x"></i></a>
+
+                    <form class="mt-4">
+                      <div class="form-outline form-white mb-4">
+                        <input type="text" id="typeName" class="form-control form-control-lg" siez="17"
+                          placeholder="Cardholder's Name" />
+                        <label class="form-label" for="typeName">Cardholder's Name</label>
+                      </div>
+
+                      <div class="form-outline form-white mb-4">
+                        <input type="text" id="typeText" class="form-control form-control-lg" siez="17"
+                          placeholder="1234 5678 9012 3457" minlength="19" maxlength="19" />
+                        <label class="form-label" for="typeText">Card Number</label>
+                      </div>
+
+                      <div class="row mb-4">
+                        <div class="col-md-6">
+                          <div class="form-outline form-white">
+                            <input type="text" id="typeExp" class="form-control form-control-lg"
+                              placeholder="MM/YYYY" size="7" id="exp" minlength="7" maxlength="7" />
+                            <label class="form-label" for="typeExp">Expiration</label>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-outline form-white">
+                            <input type="password" id="typeText" class="form-control form-control-lg"
+                              placeholder="&#9679;&#9679;&#9679;" size="1" minlength="3" maxlength="3" />
+                            <label class="form-label" for="typeText">Cvv</label>
+                          </div>
+                        </div>
+                      </div>
+
+                    </form>
+
+                    <hr class="my-4">
+                    <div class="d-flex justify-content-between mb-4">
+                      <p class="mb-2">Total(Incl. taxes)</p>
+                      <p class="mb-2">{{TotalPrice}} LE</p>
+                    </div>
+                    <div>
+
+                      <button type="button" class="btn btn-warning animated btn-block btn-lg" (click)="sendOrder()" >
+                        <div class="d-flex justify-content-between ">
+                          <span>Cash on delivery</span>
+                        </div>
+                      </button>
+                      <button type="button" class="btn btn-warning animated btn-block btn-lg m-2"(click)="sendOrder()" >
+                        <div class="d-flex justify-content-between ">
+                          <span>Pay Online</span>
+
+                        </div>
+                      </button>
+                    </div>
+
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <app-extra (totalpr)="change($event)"></app-extra>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- * -->

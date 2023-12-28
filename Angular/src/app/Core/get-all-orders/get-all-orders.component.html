@@ -1,0 +1,68 @@
+<div class="container-xxl py-5 bg-dark hero-header mb-5">
+    <div class="container text-center my-5 pt-5 pb-4">
+        <h1 class="display-3 text-white mb-3  slideInDown">Cashier Dashbourd</h1>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb justify-content-center text-uppercase">
+                <li class="breadcrumb-item "><a class="borderli" [routerLink]="['/meals']">Meals</a></li>
+                <li class="breadcrumb-item "><a class="borderli" [routerLink]="['/offer/admin']" >Offers</a></li>
+                <li class="breadcrumb-item "><a class="borderli" [routerLink]="['/extras']" >Extra</a></li>
+                <li class="breadcrumb-item "><a class="borderli" [routerLink]="['/ordersdata']" >Orders</a></li>
+  
+                <li class="breadcrumb-item text-white active" aria-current="page">Cashier</li>
+                
+            </ol>
+        </nav>
+    </div>
+  </div>
+<div *ngIf="orders && orders.length > 0">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Order Date</th>
+          <th>Delivery Time</th>
+          <th>Order Price</th>
+          <th>Status</th>
+          <th>Customer ID</th>
+          <th>Cashier Name</th>
+          <th>Delivery Boy Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let order of orders">
+          <td>{{ order.id }}</td>
+          <td>{{ order.orderDate | date }}</td>
+          <td>{{ order.deliveryTime | date }}</td>
+          <td>{{ order.orderPrice }} </td>
+          <td>
+            <select id="dropdown" [(ngModel)]="order.status" (ngModelChange)="updateOrderStatus(order.id, order.status)">
+              <option *ngFor="let option of options" [value]="option">{{ getStatusLabel(option) }}</option>
+            </select>
+
+             
+          
+          </td>
+          <td>{{ order.customerId }}</td>
+          <td>
+            <select id="cashierBoyDropdown" [(ngModel)]="order.cashierId" (ngModelChange)="updateOrderCashier(order.id, order.cashierId)">
+              <option *ngFor="let Cashier of cashiers" [value]="Cashier.id">{{ Cashier.name }}</option>
+            </select>
+          </td>
+
+          <!-- <td>{{ order.deliveryBoyId }}</td> -->
+          <td>
+            <select id="deliveryBoyDropdown" [(ngModel)]="order.deliveryBoyId" (ngModelChange)="updateOrderDeliveryBoy(order.id, order.deliveryBoyId)">
+              <option *ngFor="let deliveryBoy of deliveryBoys" [value]="deliveryBoy.id">{{ deliveryBoy.name }}</option>
+            </select>
+          </td>
+
+          <td><i class="bi bi-cart text-success fa-2x  " (click)="GetDetail(order.id)" >+</i></td>
+        </tr>
+      
+      </tbody>
+    </table>
+  </div>
+  
+  <div *ngIf="!orders || orders.length === 0">
+    <p>No orders available.</p>
+  </div>

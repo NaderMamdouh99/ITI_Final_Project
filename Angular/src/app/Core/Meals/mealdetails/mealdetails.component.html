@@ -1,0 +1,24 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container text-center">
+  <h5 class="display-3 section-title ff-secondary text-center Logos slideInLeft fw-normal">Meal Details</h5>
+</div>
+
+<div class="container">
+  <div class="card m-1">
+    <div class="card-header">
+      Meal Name : {{Meal?.name}}
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Meal Id : {{Meal?.id}}</li>
+      <li class="list-group-item">Meal Details : {{Meal?.details}}</li>
+      <li class="list-group-item">Meal Price : {{Meal?.price}}</li>
+      <li class="list-group-item">Meal Discount : {{Meal?.discount}}</li>
+    </ul>
+  </div>
+  <div class="btn btn-warning m-2 animated" [routerLink]="['/meals']">Back To Products</div>
+
+</div>

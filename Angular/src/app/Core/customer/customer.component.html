@@ -1,0 +1,49 @@
+<!-- Hero -->
+<div class="container-xxl py-5 bg-dark hero-header mb-5">
+  <div class="container text-center my-5 pt-5 pb-4">
+      <h1 class="display-3 text-white mb-3  slideInDown">Admin Dashbourd</h1>
+      <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-center text-uppercase">
+              <li class="breadcrumb-item "><a class="borderli" [routerLink]="['/cashiers']">Cashier</a></li>
+              <li class="breadcrumb-item "><a class="borderli" [routerLink]="['/deliverys']" >Delivery</a></li>
+              <li class="breadcrumb-item "><a class="borderli" [routerLink]="['/customer']" >Customer</a></li>
+              <li class="breadcrumb-item text-white active" aria-current="page">Admin</li>
+          </ol>
+      </nav>
+  </div>
+</div>
+<div class="container">
+
+<table class="table m-4">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <!-- <th scope="col">Details</th> -->
+          <th scope="col">Address</th>
+          <th scope="col">Email</th>
+          <th scope="col">Mobile</th>
+          <!-- <th scope="col">Photo</th> -->
+          <th scope="col">handle</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of customers, let i = index ">
+          <th scope="row">{{i+1}}</th>
+          <td>{{item.userName}}</td>
+          <td>{{item.address}}</td>
+          <td>{{item.email}}</td>
+          <td>{{item.mobile}}</td>
+
+          <td>
+              <i class="bi fs-4 text-warning m-2 bi-info-square-fill"[routerLink]="['/customer/details/',item.id]"></i>
+              <i class="bi fs-4 text-pripary m-2 bi-pencil-fill"[routerLink]="['/customer/edit/',item.id]"></i>
+              <i class="bi fs-4 text-danger m-2 bi-calendar-x-fill"(click)="delete(item.email)"></i>
+
+
+          </td>
+
+        </tr>
+
+      </tbody>
+    </table>

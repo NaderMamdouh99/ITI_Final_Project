@@ -1,0 +1,18 @@
+.sign{
+  color: #FEA116;
+}
+.animated{
+  background-color: #FEA116;
+  color: white;
+}
+.animated:hover{
+  background-color:#dd8707;
+  color: white;
+}
+
+a{
+  text-decoration:  none;
+}
+.ff-secondary {
+  font-family: 'Pacifico', cursive;
+}

@@ -1,0 +1,135 @@
+<div>
+  <br />
+  <br />
+  <br />
+  <br />
+  <br />
+</div>
+<div class="container">
+  <div class="container text-center">
+    <h1 class="text-center display-3 ff-secondary Logos section-title">
+      {{ mealId ? "Edit Meal " : "Add Meal " }}</h1>
+  </div>
+  <form class="row g-3 m-5" (submit)="getData($event)" [formGroup]="mealForm">
+
+      <div class="col-11">
+        <label for="name">Meal name</label>
+        <input
+          type="text"
+          name="name"
+          formControlName="name"
+          [ngClass]="{
+            'is-valid': nameControl?.valid && nameControl?.touched,
+            'is-invalid': !nameControl?.valid && nameControl?.touched
+          }"
+          class="form-control"
+          id="name"
+          placeholder=" name"
+          required
+        />
+        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">Name Is Reqiured!</div>
+      </div>
+
+      <div class="col-11">
+        <label for="details">meal description</label>
+        <input
+          type="text"
+          name="details"
+          formControlName="details"
+          class="form-control is-valid"
+          id="details"
+          [ngClass]="{
+            'is-valid': detailsControl?.valid && detailsControl?.touched,
+            'is-invalid': !detailsControl?.valid && detailsControl?.touched
+          }"
+          placeholder=" description"
+          required
+        />
+        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">Details Is Reqiured!</div>
+      </div>
+
+      <div class="col-11">
+        <label for="price">meal price </label>
+        <input
+          type="number"
+          name="price"
+          [ngClass]="{
+            'is-valid': priceControl?.valid && priceControl?.touched,
+            'is-invalid': !priceControl?.valid && priceControl?.touched
+          }"
+          formControlName="price"
+          class="form-control"
+          id="price"
+          placeholder="price"
+          required
+        />
+
+        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">Price is Reqiured!</div>
+      </div>
+      <div class="col-11">
+        <label for="discount">meal discount </label>
+        <input
+          type="number"
+          name="discount"
+          formControlName="discount"
+          [ngClass]="{
+            'is-valid': discountControl?.valid && discountControl?.touched,
+            'is-invalid': !discountControl?.valid && discountControl?.touched
+          }"
+          class="form-control is-valid"
+          id="discount"
+          placeholder="discount"
+          required
+        />
+        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">Discount is Reqiured!</div>
+      </div>
+
+
+        <div class="col-11">
+          <label for="photo">meal picture </label>
+          <input
+            type="file"
+            name="photo"
+            (change)="handleImageUpload($event)"
+            accept="image/*"
+            [ngClass]="{
+              'is-valid': photoControl?.valid && photoControl?.touched,
+              'is-invalid': !photoControl?.valid && photoControl?.touched
+            }"
+            class="file-upload form-control is-valid"
+            id="photo"
+            placeholder="picture"
+          />
+
+          <div class="valid-feedback">Looks good!</div>
+          <div class="invalid-feedback">Photo is Reqiured!</div>
+        </div>
+
+
+      <div class="col-md-4 mb-3">
+        <img
+          id="image"
+          [src]="imgshow"
+          class="img-fluid rounded border"
+          alt=""
+        />
+      </div>
+
+
+    <div class="row">
+      <button class="btn btn-primary m-2 col-2" type="submit">
+        Submit Form
+      </button>
+
+      <a [routerLink]="['/meals']" class="btn = btn-warning m-2 col-2"
+        >Back To Meals</a
+      >
+    </div>
+
+      
+  </form>
+</div>

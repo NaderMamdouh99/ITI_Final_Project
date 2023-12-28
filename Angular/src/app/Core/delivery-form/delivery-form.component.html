@@ -1,0 +1,101 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<form class="row m-4 g-3" [formGroup]="deliveryForm" (submit)="GetData($event)">
+    <h1>Delivery Page</h1>
+    <div class="col-4">
+        <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" height="200px" width="300px" alt="photo">
+    </div>
+    
+  <div>
+    <div class="col-md-4">
+      <label for="name" class="form-label"> Name</label>
+      <input type="text" class="form-control" id="name" 
+      [ngClass]="{
+        'is-invalid':!namecontrol?.valid && namecontrol?.touched,
+        'is-vaild':namecontrol?.valid
+      }"
+      
+      required formControlName="name">
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+      <div class="invalid-feedback">
+        Looks bad!
+      </div>
+
+    </div>
+  </div>
+   
+    <div class="col-md-4">
+      <label for="email" class="form-label">Email</label>
+      <input type="text" class="form-control" id="email" formControlName="email" 
+      [ngClass]="{
+        'is-invalid':!emailcontrol?.valid && emailcontrol?.touched,
+        'is-vaild':emailcontrol?.valid
+      }"
+      
+      required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+      <div class="invalid-feedback">
+        Looks bad!
+      </div>
+    </div>
+      <p></p>
+      <div class="col-md-4">
+        <label for="address" class="form-label"> Address</label>
+        <input type="text" class="form-control" id="address" 
+        [ngClass]="{
+          'is-invalid':!addresscontrol?.valid && addresscontrol?.touched,
+          'is-vaild':addresscontrol?.valid
+        }"
+        
+        required formControlName="address">
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+        <div class="invalid-feedback">
+          Looks bad!
+        </div>
+      </div><p></p>
+      <div class="col-md-4">
+        <label for="mobile" class="form-label"> Mobile</label>
+        <input type="text" class="form-control" id="mobile" 
+        [ngClass]="{
+          'is-invalid':!mobilecontrol?.valid && mobilecontrol?.touched,
+          'is-vaild':addresscontrol?.valid
+        }"
+        
+        required formControlName="mobile">
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+        <div class="invalid-feedback">
+          Looks bad!
+        </div>
+      </div><p></p>
+      <div class="col-md-4">
+        <label for="passward" class="form-label"> Passward</label>
+        <input type="text" class="form-control" id="passward" 
+        [ngClass]="{
+          'is-invalid':!passwardcontrol?.valid && passwardcontrol?.touched,
+          'is-vaild':passwardcontrol?.valid
+        }"
+        
+        required formControlName="passward">
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+        <div class="invalid-feedback">
+          Looks bad!
+        </div>
+      </div><p></p>
+
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit">Submit form</button>
+    </div>

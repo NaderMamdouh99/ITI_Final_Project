@@ -1,0 +1,93 @@
+<div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  </div>
+  <div class="container">
+    <div class="container text-center">
+      <h1 class="text-center display-3 ff-secondary Logos section-title">
+        {{ offerId ? "Edit Offer" : "Add New Offer" }}
+      </h1>
+    </div>
+
+<form class="row g-3 m-5" [formGroup]="offersForm" (submit)="GetData($event)" >
+
+    <div class="col-11">
+      <label for="name" class="form-label">Offer name</label>
+      <input type="text" class="form-control" id="name" name="name" formControlName="name"
+      [class.is-invalid] ="!offersForm.controls['name'].valid  && offersForm.controls['name'].touched "
+      required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+      <div class="invalid-feedback">
+        {{ offersForm.controls['name'].errors | json}}
+       </div>
+    </div>
+    <div class="col-11">
+      <label for="details" class="form-label" >Details</label>
+      <input type="text" class="form-control" id="details"name="details" formControlName="details"
+      [class.is-invalid] ="!offersForm.controls['details'].valid && offersForm.controls['details'].touched"
+      required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+      <div class="invalid-feedback">
+       {{ offersForm.controls['details'].errors | json}}
+      </div>
+    </div>
+    <div class="col-11">
+        <label for="price" class="form-label" >Price</label>
+        <input type="number" class="form-control" id="price" name="price" formControlName="price"
+        [class.is-invalid] ="!offersForm.controls['price'].valid &&  offersForm.controls['price'].touched"
+        required>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+        <div class="invalid-feedback">
+          {{ offersForm.controls['price'].errors | json}}
+         </div>
+      </div>
+    <div class="col-11">
+        <label for="enddate" class="form-label" >End Date</label>
+        <input type="date" class="form-control" id="enddate" name="enddate" formControlName="enddate"
+        [class.is-invalid] ="!offersForm.controls['enddate'].valid && offersForm.controls['enddate'].touched"
+        required>
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+        <div class="invalid-feedback">
+          {{ offersForm.controls['enddate'].errors | json}}
+         </div>
+         <div class="col-11">
+            <label for="startdate" class="form-label" >Start Date</label>
+            <input type="date" class="form-control" id="startdate" name="startdate" formControlName="startdate"
+            [class.is-invalid] ="!offersForm.controls['startdate'].valid && offersForm.controls['startdate'].touched"
+            required>
+            <div class="valid-feedback">
+              Looks good!
+            </div>
+            <div class="invalid-feedback">
+              {{ offersForm.controls['startdate'].errors | json}}
+             </div>
+             <div class="col-11">
+              <label for="photo" class="form-label">Photo</label>
+              <input type="file" (change)="handleImageUpload($event)" accept="image/*" class="form-control" id="photo" name="photo" >
+
+             <br>
+              <img id="preview" [src]="imgshow" style="height: 200px; width: 200px; padding-left: 30px;" alt="Sample image">
+
+              <br>
+            </div>
+          </div>
+          <br>
+
+          <div class="col-11">
+            <button class="btn btn-primary" type="submit">Submit form</button>
+          </div>
+    </div>
+
+        </form>
+      </div>
