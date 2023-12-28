@@ -24,3 +24,10 @@ The frontend is developed using the Angular framework, delivering a responsive a
 -	Integration with loyalty programs.
 -	Expanded menu offerings and special promotions.
 With our Food Delivery System, we aim to revolutionize the way customers experience online food ordering. Our commitment to providing a user-friendly, secure, and efficient platform reflects our dedication to delivering an exceptional dining experience from the comfort of your home.
+  Team Work:
+Samual Gamil Adel
+Mahmoud Abdelwahed Roushdy
+Mostafa Gamal Rady
+Ahmed Gamal Rasmi
+Nader Mohamed Mamdouh
+ 
